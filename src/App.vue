@@ -17,7 +17,7 @@
             {{ weather.name }}
           </div>
           <div class="date">
-            {{ myDate }}
+            {{ monthLst[myDate] }}
           </div>
         </div>
         <div class="weather-box">
@@ -38,7 +38,8 @@ data () {
     url_base: "https://api.openweathermap.org/data/2.5/weather?q=",
     query: '',
     weather: {},
-    myDate: `${new Date().getDay()}, ${new Date().getMonth()+1} ${new Date().getFullYear()}`,
+    monthLst: ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    myDate: new Date().getMonth()+1,
   }
 },
 methods: {
